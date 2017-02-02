@@ -26,14 +26,17 @@ public class HelloMap extends Activity implements View.OnClickListener {
         mv.setBuiltInZoomControls(true);
         mv.getController().setZoom(14);
         mv.getController().setCenter(new GeoPoint(40.1, 22.5));
+
     }
 
     @Override
     public void onClick(View view) {
         EditText latitudeEditText = (EditText) findViewById(R.id.latitudeInput);
-        double latitdue = Double.parseDouble(latitudeEditText.getText().toString());
+        double latitude = Double.parseDouble(latitudeEditText.getText().toString());
 
         EditText longitudeEditText = (EditText) findViewById(R.id.longitudeInput);
         double longitude = Double.parseDouble(longitudeEditText.getText().toString());
+
+        mv.getController().setCenter(new GeoPoint(latitude, longitude));
     }
 }
