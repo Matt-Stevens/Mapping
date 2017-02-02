@@ -5,12 +5,45 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     >
+
     <org.osmdroid.views.MapView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="392dp"
         android:enabled="true"
         android:clickable="true"
         android:id="@+id/map1"
-        tilesource="Mapnik"
-        />
+        tilesource="Mapnik"/>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="62dp"
+        android:weightSum="1">
+
+        <EditText android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/latitudeInput"
+            android:layout_gravity="start"
+            android:padding="10dp"
+            android:layout_weight="0.50"
+            android:hint="@string/latitude"
+            android:gravity="center"/>
+
+        <EditText
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/longitudeInput"
+            android:padding="10dp"
+            android:layout_weight="0.50"
+            android:hint="@string/longitude"
+            android:gravity="center"/>
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/go"
+        android:id="@+id/submitButton"
+        android:layout_gravity="center_horizontal" />
+
 </LinearLayout>
