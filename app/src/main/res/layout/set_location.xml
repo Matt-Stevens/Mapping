@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/setLatitude"
+            android:layout_gravity="start"
+            android:padding="10dp"
+            android:layout_weight="0.50"
+            android:hint="@string/latitude"
+            android:gravity="center"/>
+
+        <EditText
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/setLongitude"
+            android:padding="10dp"
+            android:layout_weight="0.50"
+            android:hint="@string/longitude"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="20px"
+        android:text="@string/go"
+        android:id="@+id/submitButton"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.21"/>
+
+
+</LinearLayout>

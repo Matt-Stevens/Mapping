@@ -45,12 +45,19 @@ public class HelloMap extends Activity implements View.OnClickListener {
             startActivityForResult(intent, 0);
             return true;
         }
+        if(item.getItemId() == R.id.setlocation){
+
+            Intent intent = new Intent(this,SetLocation.class);
+            startActivityForResult(intent, 1);
+            return true;
+        }
+
         return false;
     }
     protected void onActivityResult(int requestCode,int resultCode,Intent intent)
     {
 
-        if(requestCode==0) //id of activity launching new activity
+        if(requestCode==0) //id of activity launching new activity. Launches second activity and expects response
         {
 
             if (resultCode==RESULT_OK) //code send back to main activity from the second activity
@@ -66,6 +73,9 @@ public class HelloMap extends Activity implements View.OnClickListener {
                     mv.setTileSource(TileSourceFactory.MAPNIK);
                 }
             }
+        }
+        else if(requestCode==1){
+
         }
     }
 
