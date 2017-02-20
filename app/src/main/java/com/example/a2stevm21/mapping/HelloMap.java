@@ -54,17 +54,15 @@ public class HelloMap extends Activity implements View.OnClickListener {
 
         return false;
     }
-    protected void onActivityResult(int requestCode,int resultCode,Intent intent)
-    {
+    protected void onActivityResult(int requestCode,int resultCode,Intent intent){
 
-        if(requestCode==0) //id of activity launching new activity. Launches second activity and expects response
-        {
+        if(requestCode == 0){ //id of activity launching new activity. Launches second activity and expects response
 
-            if (resultCode==RESULT_OK) //code send back to main activity from the second activity
+            if (resultCode == RESULT_OK) //code send back to main activity from the second activity
             {
-                Bundle extras=intent.getExtras();
+                Bundle extras = intent.getExtras();
                 boolean cyclemap = extras.getBoolean("com.example.cyclemap");
-                if(cyclemap==true)
+                if(cyclemap == true)
                 {
                     mv.setTileSource(TileSourceFactory.CYCLEMAP);
                 }
@@ -74,8 +72,15 @@ public class HelloMap extends Activity implements View.OnClickListener {
                 }
             }
         }
-        else if(requestCode==1){
+        else if(requestCode == 1){
 
+            if (resultCode == RESULT_OK) //code send back to main activity from the second activity
+            {
+                Bundle extras=intent.getExtras();
+                double latitude = extras.getDouble("com.example.latitude");
+                double longitude = extras.getDouble("com.example.longitude");
+                mv.getController().setCenter(new GeoPoint(latitude, longitude));
+            }
         }
     }
 
