@@ -4,8 +4,6 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="0px"
-    android:layout_margin="0px"
     >
 
     <org.osmdroid.views.MapView

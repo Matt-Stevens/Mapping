@@ -41,7 +41,7 @@ public class HelloMap extends Activity implements View.OnClickListener {
     public boolean onOptionsItemSelected(MenuItem item){
         if(item.getItemId() == R.id.choosemap){
 
-            Intent intent = new Intent(this,MapChooseActivity.class);
+            Intent intent = new Intent(this,MapViewListActivity.class);
             startActivityForResult(intent, 0);
             return true;
         }
@@ -74,7 +74,7 @@ public class HelloMap extends Activity implements View.OnClickListener {
         }
         else if(requestCode == 1){
 
-            if (resultCode == RESULT_OK) //code send back to main activity from the second activity
+            if (resultCode == RESULT_OK)
             {
                 Bundle extras=intent.getExtras();
                 double latitude = extras.getDouble("com.example.latitude");

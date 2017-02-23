@@ -31,6 +31,7 @@ public class SetLocation extends Activity implements View.OnClickListener {
         bundle.putDouble("com.example.setLong", longitude);
         intent.putExtras(bundle);
         setResult(RESULT_OK, intent);
+
         finish();
 
     }
